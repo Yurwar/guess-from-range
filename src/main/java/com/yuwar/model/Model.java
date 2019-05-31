@@ -41,6 +41,10 @@ public class Model {
         return 0;
     }
 
+    public void setSecretNumber(int secretNumber) {
+        this.secretNumber = secretNumber;
+    }
+
     public int getAttemptsStatistic() {
         return attemptsHistory.size();
     }
