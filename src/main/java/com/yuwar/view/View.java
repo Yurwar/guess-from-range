@@ -1,10 +1,8 @@
 package com.yuwar.view;
 
-import java.util.ArrayList;
-
 public class View {
     public static final String USAGE = "USAGE: Program generates random number " +
-            "in range from 0 to 100, " +
+            "in range ]0, 100[ " +
             "you should guess the number narrowing the range";
     public static final String HISTORY = "Your attempts history: ";
     public static final String ENTER_NUMBER = "Enter the number: ";
@@ -26,10 +24,10 @@ public class View {
                 + upper);
     }
 
-    public void printVictoryMessage(int secretNumber, ArrayList<Integer> attemptsHistory) {
+    public void printVictoryMessage(int secretNumber, String attemptsHistoryString, int attemptsStatistic) {
         System.out.printf("%s %d%n%s%n%s %d%n",
                 "Victory! You guess the secret number:", secretNumber,
-                "Your attempts history: " + attemptsHistory.toString(),
-                "Total amount of attempts is", attemptsHistory.size());
+                "Your attempts history: " + attemptsHistoryString,
+                "Total amount of attempts is", attemptsStatistic);
     }
 }

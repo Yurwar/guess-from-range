@@ -5,6 +5,9 @@ import com.yuwar.model.Model;
 import com.yuwar.view.View;
 
 public class GameController {
+    private static final int LOWER_BORDER = 0;
+    private static final int UPPER_BORDER = 100;
+
     private Model model;
     private View view;
     private ConsoleReader reader;
@@ -16,10 +19,13 @@ public class GameController {
     }
 
     public void startGame() {
-        char condition = 'n';
-        boolean winFlag = false;
+        char condition;
+        boolean winFlag;
 
         do {
+            winFlag = false;
+            model.initGame(LOWER_BORDER, UPPER_BORDER);
+
             view.printMessage(View.USAGE);
             int userNumber;
             while (!winFlag) {
@@ -42,7 +48,8 @@ public class GameController {
                         }
                         case 0: {
                             view.printVictoryMessage(model.getSecretNumber(),
-                                    model.getAttemptsHistory());
+                                    model.getAttemptsHistoryString(),
+                                    model.getAttemptsStatistic());
                             winFlag = true;
                         }
                         default:
@@ -56,11 +63,6 @@ public class GameController {
 
             view.printMessage(View.START_AGAIN);
             condition = reader.readChar();
-
-            if (condition == 'y' || condition == 'Y' ) {
-                winFlag = false;
-                model.restartGame();
-            }
         } while (condition == 'y' || condition == 'Y');
     }
 }

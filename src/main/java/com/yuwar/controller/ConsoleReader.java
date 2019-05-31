@@ -14,6 +14,6 @@ public class ConsoleReader {
     }
 
     public char readChar() {
-        return sc.next().charAt(0);
+        return sc.nextLine().charAt(0);
     }
 }
