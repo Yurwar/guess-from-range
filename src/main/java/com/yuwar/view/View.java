@@ -9,7 +9,6 @@ public class View {
     public static final String INCORRECT_INPUT = "Incorrect input";
     public static final String NUMBER_BIGGER = "Your number is bigger then generated";
     public static final String NUMBER_SMALLER = "Your number is smaller then generated";
-    public static final String VICTORY = "Victory! You guess the number";
     public static final String START_AGAIN = "Do you want to start a new game? (y/N):";
 
 

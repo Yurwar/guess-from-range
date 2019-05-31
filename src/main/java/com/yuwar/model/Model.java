@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Model {
-    private final int LOWER_BORDER = 0;
-    private final int UPPER_BORDER = 100;
     private int currentLowerBorder;
     private int currentUpperBorder;
     private int secretNumber;
